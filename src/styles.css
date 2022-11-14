@@ -1,4 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+html, body {
+    height: 100%;
+    background-color:#37474F !important;
+    text-align: center;
+    color:white;
+    margin: auto;
+}
+
+.header {
+    border-radius: 15px;
+    height: 10%;
+    background-color:#455A64;
+    text-align: center;
+    color:white;
+    margin: 50px;
+    padding: 10px;
+    border: 3px solid #B0BEC5;
+}
+
+.calculator {
+    width: 50%;
+    text-align: center;
+    color:white;
+    padding: 10px;
+    margin: auto;
+}
+
+.container {
+    border-radius: 15px;
+    background-color:#455A64;
+    text-align: center;
+    color:white;
+    margin: 50px;
+    padding: 10px;
+    border: 3px solid #B0BEC5;
+}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.borderedDiv {
+    background-color:#607D8B;
+    border-radius: 15px;
+    position: relative;
+    width: 40%;
+    margin: auto;
+    margin-top: 10px;
+    height: auto;
+    border: 2px solid #B0BEC5;
+    padding: 10px;
+}
