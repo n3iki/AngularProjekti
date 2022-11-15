@@ -8,14 +8,6 @@ html, body {
     margin: auto;
 }
 
-.navbar {
-    position: sticky !important;
-    top: 0 !important;
-    margin:auto;
-    z-index: 999;
-
-    
-}
 
 .header {
     height: 10%;
@@ -34,6 +26,14 @@ html, body {
     padding: 10px;
     margin: auto;
 }
+.navigointi {
+    background-color:#455A64;
+    text-align: center;
+    color:white;
+    margin: auto;
+    padding: 10px;
+    border: 3px solid #B0BEC5;
+}
 
 .container {
     background-color:#455A64;
@@ -43,6 +43,7 @@ html, body {
     padding: 10px;
     border: 3px solid #B0BEC5;
 }
+
 
 
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

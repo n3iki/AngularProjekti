@@ -3,16 +3,14 @@
 </head>
 
 <body>
-    <div class="navbar">
+    <div>
         <app-toolbar></app-toolbar>
-        <router-outlet></router-outlet>
     </div>
     <div class="container">
-        <h2>{{ title }} app by {{ name }} is running! :D</h2>
-        <div class="borderedDiv"><app-helloworld></app-helloworld></div>
-        <div class="borderedDiv"><app-calculator></app-calculator></div>
-        <div class="borderedDiv"><app-feedback></app-feedback></div>
-        <div class="borderedDiv"><app-templatedrivenform></app-templatedrivenform></div>
+        <div class="borderedDiv">
+            <router-outlet></router-outlet>
+        </div>
+
 
     </div>
 
