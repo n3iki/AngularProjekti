@@ -1,25 +1,29 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 </head>
+
 <body>
+    <div class="navbar">
+        <app-toolbar></app-toolbar>
+        <router-outlet></router-outlet>
+    </div>
+    <div class="container">
+        <h2>{{ title }} app by {{ name }} is running! :D</h2>
+        <div class="borderedDiv"><app-helloworld></app-helloworld></div>
+        <div class="borderedDiv"><app-calculator></app-calculator></div>
+        <div class="borderedDiv"><app-feedback></app-feedback></div>
+        <div class="borderedDiv"><app-templatedrivenform></app-templatedrivenform></div>
 
-<div class="container">
-<h2>{{ title }} app by {{ name }} is running! :D</h2>
-<div class="borderedDiv"><app-helloworld></app-helloworld></div>
-<div class="borderedDiv"><app-calculator></app-calculator></div>
-<div class="borderedDiv"><app-feedback></app-feedback></div>
-<div class="borderedDiv"><app-templatedrivenform></app-templatedrivenform></div>
-
-</div>
+    </div>
 
 
 
 
-      <!-- Link JavaScript -->
-      <!-- jQuery, Popper.js, Bootstrap JS -->
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+        <!-- Link JavaScript -->
+        <!-- jQuery, Popper.js, Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 </body>
 
 <!-- <router-outlet></router-outlet> -->

@@ -8,6 +8,7 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { HelloworldComponent } from './helloworld/helloworld.component';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 
 //angular material:
 import  { MatButtonModule } from '@angular/material/button';
@@ -17,7 +18,18 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { TemplatedrivenformComponent } from './templatedrivenform/templatedrivenform.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
 
+
+const appRoutes: Routes = [
+  { path: 'calculator', component: CalculatorComponent},
+  { path: 'feedback', component: FeedbackComponent},
+  { path: 'helloworld', component: HelloworldComponent},
+  { path: 'templateddrivenform', component: TemplatedrivenformComponent}
+];
 
 @NgModule({
   declarations: [
@@ -25,7 +37,8 @@ import {MatInputModule} from '@angular/material/input';
     CalculatorComponent,
     FeedbackComponent,
     HelloworldComponent,
-    TemplatedrivenformComponent
+    TemplatedrivenformComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +50,14 @@ import {MatInputModule} from '@angular/material/input';
     FormsModule,
     MatGridListModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatToolbarModule,
+    RouterModule.forRoot(
+      appRoutes,
+      {enableTracing: true}
+    ),
+    MatIconModule,
+    MatMenuModule
 
   ],
   providers: [],

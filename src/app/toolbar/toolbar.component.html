@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+    <button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>format_align_justify</mat-icon>
+    </button>
+    Front-end harjoitukset
+    <mat-menu #menu="matMenu">
+        <a routerLink="/calculator" routerLinkActive="active">
+            <button mat-menu-item>
+            <span>Calculator</span>
+            </button>
+        </a>
+        <a routerLink="/helloworld" routerLinkActive="active">
+            <button mat-menu-item>
+            <span>Hello World!</span>
+            </button>
+            </a>
+        <a routerLink="/feedback" routerLinkActive="active">
+            <button mat-menu-item>
+            <span>Feedback</span>
+            </button>
+            </a>
+        <a routerLink="/templateddrivenform" routerLinkActive="active">
+                <button mat-menu-item>
+                <span>Lomakeharjoitus 1</span>
+                </button>
+                </a>
+      </mat-menu>
+    </mat-toolbar>

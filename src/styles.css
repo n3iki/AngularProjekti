@@ -8,8 +8,16 @@ html, body {
     margin: auto;
 }
 
+.navbar {
+    position: sticky !important;
+    top: 0 !important;
+    margin:auto;
+    z-index: 999;
+
+    
+}
+
 .header {
-    border-radius: 15px;
     height: 10%;
     background-color:#455A64;
     text-align: center;
@@ -20,7 +28,7 @@ html, body {
 }
 
 .calculator {
-    width: 50%;
+    width: 30%;
     text-align: center;
     color:white;
     padding: 10px;
@@ -28,21 +36,21 @@ html, body {
 }
 
 .container {
-    border-radius: 15px;
     background-color:#455A64;
     text-align: center;
     color:white;
-    margin: 50px;
+    margin: auto;
     padding: 10px;
     border: 3px solid #B0BEC5;
 }
+
+
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .borderedDiv {
     background-color:#607D8B;
-    border-radius: 15px;
     position: relative;
-    width: 40%;
+    width: 70%;
     margin: auto;
     margin-top: 10px;
     height: auto;
