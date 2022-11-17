@@ -4,6 +4,11 @@
     </button>
     Front-end harjoitukset
     <mat-menu #menu="matMenu">
+        <a routerLink="/homepage" routerLinkActive="active">
+            <button mat-menu-item>
+            <span>Etusivu</span>
+            </button>
+            </a>
         <a routerLink="/calculator" routerLinkActive="active">
             <button mat-menu-item>
             <span>Calculator</span>
@@ -20,9 +25,9 @@
             </button>
             </a>
         <a routerLink="/templateddrivenform" routerLinkActive="active">
-                <button mat-menu-item>
-                <span>Lomakeharjoitus 1</span>
-                </button>
-                </a>
+            <button mat-menu-item>
+            <span>Lomakeharjoitus 1</span>
+            </button>
+            </a>
       </mat-menu>
     </mat-toolbar>

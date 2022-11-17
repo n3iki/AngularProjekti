@@ -19,14 +19,23 @@ html, body {
     border: 3px solid #B0BEC5;
 }
 
-.banneri{
+img{
     display: block;
     max-width:100%;
     max-height:100%;
     width: auto;
     height: auto;
+
+}
+
+.img.centered {
     margin-left: auto;
     margin-right: auto;
+}
+
+.img.smallimg {
+    width: 100px;
+    height: 100px;
 }
 
 .calculator {
@@ -47,11 +56,15 @@ html, body {
 
 .container {
     background-color:#455A64;
-    text-align: center;
     color:white;
+    text-align: center;
     margin: auto;
     padding: 10px;
     border: 3px solid #B0BEC5;
+}
+
+.notcentered {
+    text-align:left;
 }
 
 

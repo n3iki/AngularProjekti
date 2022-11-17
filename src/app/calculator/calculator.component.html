@@ -2,7 +2,7 @@
 <!-- <button mat-flat-button color="primary" (click)="one)">1</button> -->
 <div>
     <span><h1>&nbsp;{{result}}&nbsp;</h1></span>
-<div class = "calculator">
+<div class = "calculator" >
     <mat-grid-list cols="4" rowHeight="2:1">
     <mat-grid-tile *ngFor="let button of buttons"><button mat-flat-button color="primary" (click)="addValue(button)">{{button}}</button></mat-grid-tile>
     </mat-grid-list>
