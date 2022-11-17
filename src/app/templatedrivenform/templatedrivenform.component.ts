@@ -8,7 +8,11 @@ import { Person } from './person';
 })
 export class TemplatedrivenformComponent implements OnInit {
 testPerson = new Person();
-  
+
+onSubmit(form:any)
+{
+  console.log(this.testPerson)
+}
   
 
   constructor() { }

@@ -1,60 +1,118 @@
 <p>templatedrivenform works!</p>
 <div>
     <h1>Registration form</h1>
-    <mat-form-field>
-        <mat-label>First Name</mat-label>
-        <input matInput
-        appearance="fill"
-        ngModel pattern="[a-zA-Z ]*"
-        [(ngModel)]="testPerson.firstName"
-        #fname="ngModel"
-        required minlenght="2" pattern="^[a-zA-Z ]*$"
-        >
-        <mat-error *ngIf="fname.hasError('required')">Enter your first name</mat-error>
-        <mat-error *ngIf="fname.hasError('minlenght')">Minimum of 2 characters required</mat-error>
-        <mat-error *ngIf="fname.hasError('pattern')">Must be a valid name, only letters allowed</mat-error>
-      </mat-form-field>
-      <br>
+    <form (ngSubmit)="onSubmit(regForm)" #regForm="ngForm">
       <mat-form-field>
-        <mat-label>Last Name</mat-label>
-        <input matInput
-        appearance="fill"
-        ngModel pattern="[a-zA-Z ]*"
-        [(ngModel)]="testPerson.lastName"
-        #lname="ngModel"
-        required minlenght="2" pattern="^[a-zA-Z ]*$"
-        >
-        <mat-error *ngIf="lname.hasError('required')">Enter your first name</mat-error>
-        <mat-error *ngIf="lname.hasError('minlenght')">Minimum of 2 characters required</mat-error>
-        <mat-error *ngIf="lname.hasError('pattern')">Must be a valid name, only letters allowed</mat-error>
-      </mat-form-field>
-      <br>
-      <mat-form-field>
-        <mat-label>Password</mat-label>
-        <input matInput
-        type="password"
-        appearance="fill"
-        ngModel pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\w\W]*"
-        [(ngModel)]="testPerson.password"
-        #password1="ngModel"
-        required minlenght="10" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\w\W]*"
-        >
-        <mat-error *ngIf="password1.hasError('required')">Password is required</mat-error>
-        <mat-error *ngIf="password1.hasError('minlenght')">Minimum of 10 characters required</mat-error>
-        <mat-error *ngIf="password1.hasError('pattern')">Password needs to have at least one upper case letter, a lower case letter and a number</mat-error>
-      </mat-form-field>
-      <br>
-      <mat-form-field>
-        <mat-label>Password validation</mat-label>
-        <input matInput
-        type="password"
-        appearance="fill"
-        ngModel pattern="{{password1.value}}"
-        #password2="ngModel"
-        pattern="{{password1.value}}"
-        >
-        <mat-error *ngIf="password2.hasError('required')">Password validation is required</mat-error>
-        <mat-error *ngIf="password2.hasError('pattern')">Passwords need to match</mat-error>
-      </mat-form-field>
+          <mat-label>First Name</mat-label>
+          <input matInput
+          appearance="fill"
+          [(ngModel)]="testPerson.firstName"
+          #fname="ngModel"
+          name="first"
+          required minlength="2" pattern="^[a-zA-Z ]*$"
+          >
+          <mat-error *ngIf="fname.hasError('required')">Enter your first name</mat-error>
+          <mat-error *ngIf="fname.hasError('minlength')">Minimum of 2 characters required</mat-error>
+          <mat-error *ngIf="fname.hasError('pattern')">Must be a valid name, only letters allowed</mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <mat-label>Last Name</mat-label>
+          <input matInput
+          appearance="fill"
+          [(ngModel)]="testPerson.lastName"
+          #lname="ngModel"
+          name="last"
+          required minlength="2" pattern="^[a-zA-Z ]*$"
+          >
+          <mat-error *ngIf="lname.hasError('required')">Enter your first name</mat-error>
+          <mat-error *ngIf="lname.hasError('minlength')">Minimum of 2 characters required</mat-error>
+          <mat-error *ngIf="lname.hasError('pattern')">Must be a valid name, only letters allowed</mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <mat-label>Username</mat-label>
+          <input matInput
+          appearance="fill"
+          [(ngModel)]="testPerson.userName"
+          #uname="ngModel"
+          name="user"
+          required minlength="2" pattern="^[a-zA-Z ]*$"
+          >
+          <mat-error *ngIf="uname.hasError('required')">Enter your username</mat-error>
+          <mat-error *ngIf="uname.hasError('minlength')">Minimum of 2 characters required</mat-error>
+          <mat-error *ngIf="uname.hasError('pattern')">Only letters allowed</mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <mat-label>Personal ID</mat-label>
+          <input matInput
+          appearance="fill"
+          [(ngModel)]="testPerson.personalId"
+          #personalId="ngModel"
+          name="id"
+          pattern="^(0[1-9]|[12]\d|3[01])(0[1-9]|1[0-2])([5-9]\d\+|\d\d-|[01]\dA)\d{3}[\dA-Z]$"
+          required
+          >
+          <mat-error *ngIf="personalId.hasError('required')">ID is required</mat-error>
+          <mat-error *ngIf="personalId.hasError('pattern')">Personal ID is not valid</mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput
+          appearance="fill"
+          [(ngModel)]="testPerson.email"
+          #email="ngModel"
+          name="email"
+          required
+          pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+          >
+          <mat-error *ngIf="email.hasError('pattern')">Email needs to be valid</mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input matInput
+          type="password"
+          appearance="fill"
+          [(ngModel)]="testPerson.password"
+          #password1="ngModel"
+          name="password"
+          required minlength="10" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\w\W]*"
+          >
+          <mat-error *ngIf="password1.hasError('required')">Password is required</mat-error>
+          <mat-error *ngIf="password1.hasError('minlength')">Minimum of 10 characters required</mat-error>
+          <mat-error *ngIf="password1.hasError('pattern')">Password needs to have at least one upper case letter, a lower case letter and a number</mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <mat-label>Password validation</mat-label>
+          <input matInput
+          type="password"
+          appearance="fill"
+          ngModel pattern="{{password1.value}}"
+          #password2="ngModel"
+          name="password2"
+          required
+          pattern="{{password1.value}}"
+          >
+          <mat-error *ngIf="password2.hasError('required')">Password validation is required</mat-error>
+          <mat-error *ngIf="password2.hasError('pattern')">Passwords need to match</mat-error>
+        </mat-form-field>
 
+        <p>I accept terms and conditions: <input type="checkbox"
+          required
+          name="checkbox1"
+          [(ngModel)]="testPerson.hasAcceptedTerms"
+          #checkbox1="ngModel"
+          ></p>
+        <mat-error *ngIf="checkbox1.hasError('pattern')">You need to accept terms and conditions</mat-error>
+        <br>
+
+      
+
+      <button mat-flat-button color="primary" [disabled]="regForm.invalid">Submit</button>
+    </form>
+      
 </div>
