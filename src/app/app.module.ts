@@ -22,6 +22,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
+<<<<<<< Updated upstream
 import { HomepageComponent } from './homepage/homepage.component';
 
 
@@ -32,6 +33,17 @@ const appRoutes: Routes = [
   { path: 'templateddrivenform', component: TemplatedrivenformComponent },
   { path: 'homepage', component: HomepageComponent },
   { path: '', redirectTo: '/homepage', pathMatch: 'full' }
+=======
+import { ReactiveformComponent } from './reactiveform/reactiveform.component';
+
+
+const appRoutes: Routes = [
+  { path: 'calculator', component: CalculatorComponent},
+  { path: 'feedback', component: FeedbackComponent},
+  { path: 'helloworld', component: HelloworldComponent},
+  { path: 'templateddrivenform', component: TemplatedrivenformComponent},
+  { path: 'reactiveform', component: ReactiveformComponent}
+>>>>>>> Stashed changes
 ];
 
 @NgModule({
@@ -42,7 +54,11 @@ const appRoutes: Routes = [
     HelloworldComponent,
     TemplatedrivenformComponent,
     ToolbarComponent,
+<<<<<<< Updated upstream
     HomepageComponent
+=======
+    ReactiveformComponent
+>>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,
