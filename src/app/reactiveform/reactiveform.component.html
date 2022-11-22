@@ -1,1 +1,95 @@
 <p>reactiveform works!</p>
+<div class="notcentered">
+<p>To do:</p>
+    <ul>
+        <li>onsubmit() jälkeen pitäisi myös salasanan validoinnin tyhjentyä, tämä vaatii paremman validaattorin tekemistä.</li>
+      </ul>
+</div>
+<div>
+
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
+    <mat-form-field>
+        <input matInput
+        placeholder="First name"
+        formControlName="firstName"
+        >
+        <mat-error *ngIf="firstName?.hasError('required')">Enter your first name</mat-error>
+        <mat-error *ngIf="firstName?.hasError('minlength')">Minimum of 2 characters required</mat-error>
+        <mat-error *ngIf="firstName?.hasError('pattern')">Must be a valid name, only letters allowed</mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput
+        placeholder="Last name"
+        formControlName="lastName"
+        >
+        <mat-error *ngIf="lastName?.hasError('required')">Enter your last name</mat-error>
+        <mat-error *ngIf="lastName?.hasError('minlength')">Minimum of 2 characters required</mat-error>
+        <mat-error *ngIf="lastName?.hasError('pattern')">Must be a valid name, only letters allowed</mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput
+        placeholder="Username"
+        formControlName="userName"
+        >
+        <mat-error *ngIf="userName?.hasError('required')">Enter your user name</mat-error>
+        <mat-error *ngIf="userName?.hasError('minlength')">Minimum of 2 characters required</mat-error>
+        <mat-error *ngIf="userName?.hasError('pattern')">Must be a valid name, only letters allowed</mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput
+        placeholder="Personal ID"
+        formControlName="personalId"
+        >
+        <mat-error *ngIf="personalId?.hasError('required')">Enter your personal ID</mat-error>
+        <mat-error *ngIf="personalId?.hasError('pattern')">Personal ID is not valid</mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput
+        placeholder="Email"
+        formControlName="email"
+        >
+        <mat-error *ngIf="email?.hasError('required')">Enter your email address</mat-error>
+        <mat-error *ngIf="email?.hasError('pattern')">Email address is not valid</mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput
+        type="password"
+        placeholder="Password"
+        formControlName="password"
+        >
+        <mat-error *ngIf="password?.hasError('required')">Enter your password</mat-error>
+        <mat-error *ngIf="password?.hasError('minlength')">Minimum of 10 characters required</mat-error>
+        <mat-error *ngIf="password?.hasError('pattern')">Password needs to have at least one upper case letter, a lower case letter and a number</mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput
+        type="password"
+        placeholder="Password validation"
+        formControlName="passwordValidation"
+        pattern="{{password?.value}}"
+        >
+        <mat-error *ngIf="passwordValidation?.hasError('required')">Password validation is required</mat-error>
+        <mat-error *ngIf="passwordValidation?.hasError('pattern')">Passwords need to match</mat-error>
+      </mat-form-field>
+      <br>
+      <p>I accept terms and conditions: <input type="checkbox"
+        formControlName="hasAcceptedTerms"
+        ngModel required
+        ></p>
+        <mat-error *ngIf="hasAcceptedTerms?.invalid && (hasAcceptedTerms?.dirty || hasAcceptedTerms?.touched)">You need to accept terms and conditions</mat-error>        
+      <br>
+
+    
+
+    <button mat-flat-button color="primary" [disabled]="registrationForm.invalid">Submit</button>
+
+</form>    
+
+</div>
