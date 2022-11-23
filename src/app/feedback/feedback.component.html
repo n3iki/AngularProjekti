@@ -1,8 +1,7 @@
 <p>feedback works!</p>
 <div *ngFor="let question of questions">
-    <p>{{question.question}}</p>
-    <p>{{question.answer}}</p>
-    <!-- feedbacking .ts sisällä <mat-slider min="1" max="5" step="1" value="3" (input)="onInputChange($event, question)"></mat-slider> -->
-   <mat-slider min="1" max="5" step="1" value="3" (input)="question.setAnswer($event)"></mat-slider>
+    <p>{{question.Kysymys}}</p>
+    <mat-slider min="1" max="5" step="1" value="3" (input)="onInputChange($event, question.Kysymys)"></mat-slider>
+   <!-- <mat-slider min="1" max="5" step="1" value="3" (input)="question.setAnswer($event)"></mat-slider> -->
 </div>
 

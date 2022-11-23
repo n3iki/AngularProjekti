@@ -10,7 +10,7 @@ import { HelloworldComponent } from './helloworld/helloworld.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
-//angular material:
+//tuodut
 import  { MatButtonModule } from '@angular/material/button';
 import {MatSliderModule} from '@angular/material/slider';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -25,6 +25,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { QuestionService } from './question.service';
 
 
 const appRoutes: Routes = [
@@ -69,7 +70,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule
 
   ],
-  providers: [],
+  providers: [QuestionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

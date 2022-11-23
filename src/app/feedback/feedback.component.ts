@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Question } from './question';
+import { QuestionService } from '../question.service';
 
 @Component({
   selector: 'app-feedback',
@@ -7,19 +8,18 @@ import { Question } from './question';
   styleUrls: ['./feedback.component.css']
 })
 export class FeedbackComponent implements OnInit {
-  questions: Question[] = [new Question("Kysymys 1"), new Question("Kysymys 2"), new Question("Kysymys 3")];
+  public questions:any[] = [];
 
-  onInputChange(e:any, question:Question) :void //ei käytössä, tehdään toistaiseksi luokan question sisällä
+  onInputChange(e:any, question:any) :void
   {
-    question.answer = e.value;
-    console.log(e.value);
-    console.log(question.question);
-    console.log(question.answer);
+    console.log(question + " Vastaus: " +e.value);
+
   }
 
-  constructor() { }
+  constructor(private _questionService: QuestionService) { }
 
   ngOnInit(): void {
+    this.questions = this._questionService.getQuestions();
   }
 
 }
