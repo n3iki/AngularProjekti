@@ -26,6 +26,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { QuestionService } from './question.service';
+import { FinnkinoComponent } from './finnkino/finnkino.component';
 
 
 const appRoutes: Routes = [
@@ -35,6 +36,7 @@ const appRoutes: Routes = [
   { path: 'templateddrivenform', component: TemplatedrivenformComponent },
   { path: 'homepage', component: HomepageComponent },
   { path: 'reactiveform', component: ReactiveformComponent},
+  { path: 'finnkino', component: FinnkinoComponent},
   { path: '', redirectTo: '/homepage', pathMatch: 'full' }
 ];
 
@@ -47,7 +49,8 @@ const appRoutes: Routes = [
     TemplatedrivenformComponent,
     ToolbarComponent,
     HomepageComponent,
-    ReactiveformComponent
+    ReactiveformComponent,
+    FinnkinoComponent
   ],
   imports: [
     BrowserModule,
