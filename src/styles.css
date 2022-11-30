@@ -37,6 +37,10 @@ img{
     width: 100px;
     height: 100px;
 }
+img.leffakuva {
+    width: 50%;
+    height: 50%;
+}
 
 .calculator {
     width: 30%;

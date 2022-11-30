@@ -26,7 +26,10 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { QuestionService } from './question.service';
+import { CinemaService } from './cinema.service';
 import { FinnkinoComponent } from './finnkino/finnkino.component';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { HttpClientModule } from '@angular/common/http';
 
 
 const appRoutes: Routes = [
@@ -70,10 +73,12 @@ const appRoutes: Routes = [
     ),
     MatIconModule,
     MatMenuModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatExpansionModule,
+    HttpClientModule
 
   ],
-  providers: [QuestionService],
+  providers: [QuestionService, CinemaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

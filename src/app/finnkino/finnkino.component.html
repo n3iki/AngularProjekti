@@ -1,1 +1,21 @@
-<p>finnkino works!</p>
+<div>
+    <h1>Finnkino uutisia</h1>
+        <mat-accordion class="example-headers-align" multi>
+            <mat-expansion-panel *ngFor="let item of cinemaData$ | async">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  {{item.PublishDate | date:"dd/MM/yyyy"}}
+                </mat-panel-title>
+                <mat-panel-description>
+                  {{item.Title}}
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <img src="{{item.ImageURL}}" class="img centered leffakuva">
+              <br>
+              {{item.HTMLLead}}
+              <br>
+              <a href={{item.ArticleURL}}>Lue lisää Finnkinon sivuilta!</a>
+            </mat-expansion-panel>
+        </mat-accordion>
+        
+</div>
