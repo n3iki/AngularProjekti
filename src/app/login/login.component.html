@@ -1,0 +1,25 @@
+<p>login works!</p>
+<div>
+    <form [formGroup]="loginForm" (ngSubmit)="logIn()">
+        <mat-form-field>
+            <input matInput
+            placeholder="Sähköposti"
+            formControlName="email"
+            >
+            <mat-error *ngIf="email?.hasError('required')">Syötä sähköpostiosoite</mat-error>
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input matInput
+            type="password"
+            placeholder="Salasana"
+            formControlName="password"
+            >
+            <mat-error *ngIf="password?.hasError('required')">Anna salasana</mat-error>
+          </mat-form-field>
+          <br>
+            <button mat-flat-button color="primary" [disabled]="loginForm.invalid">Kirjaudu sisään</button>
+            <button mat-flat-button color="primary" (click)="peruuta()">Peruuta</button>
+        </form>
+        
+</div>

@@ -22,7 +22,6 @@ export class CinemaService {
     // filter operaattori, suodatus annetun ehdon mukaan
     return this.httpClient.get(this.url, { responseType: 'text' })
       .pipe(map(response => {
-        console.log('getXMLData... ' + response);
         let newsData: any = [];
         // tässä muunnetaan xml-data json muotoon:
 

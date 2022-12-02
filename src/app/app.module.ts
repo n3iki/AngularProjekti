@@ -30,6 +30,9 @@ import { CinemaService } from './cinema.service';
 import { FinnkinoComponent } from './finnkino/finnkino.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { HttpClientModule } from '@angular/common/http';
+import { AppFilterPipe } from './pipes/app-filter.pipe';
+import { AdminviewComponent } from './adminview/adminview.component';
+import { LoginComponent } from './login/login.component';
 
 
 const appRoutes: Routes = [
@@ -40,6 +43,8 @@ const appRoutes: Routes = [
   { path: 'homepage', component: HomepageComponent },
   { path: 'reactiveform', component: ReactiveformComponent},
   { path: 'finnkino', component: FinnkinoComponent},
+  { path: 'admin/main', component: AdminviewComponent},
+  { path: 'admin/login', component: LoginComponent},
   { path: '', redirectTo: '/homepage', pathMatch: 'full' }
 ];
 
@@ -53,7 +58,10 @@ const appRoutes: Routes = [
     ToolbarComponent,
     HomepageComponent,
     ReactiveformComponent,
-    FinnkinoComponent
+    FinnkinoComponent,
+    AppFilterPipe,
+    AdminviewComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,13 +77,13 @@ const appRoutes: Routes = [
     MatToolbarModule,
     RouterModule.forRoot(
       appRoutes,
-      {enableTracing: true}
+      {enableTracing: false}
     ),
     MatIconModule,
     MatMenuModule,
     ReactiveFormsModule,
     MatExpansionModule,
-    HttpClientModule
+    HttpClientModule,
 
   ],
   providers: [QuestionService, CinemaService],

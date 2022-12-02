@@ -28,6 +28,14 @@ img{
 
 }
 
+.mat-flat-button{
+    margin: 5px !important;
+}
+
+.toolbar-spacer {
+    flex: 1 1 auto;
+  }
+
 .img.centered {
     margin-left: auto;
     margin-right: auto;
@@ -40,6 +48,24 @@ img{
 img.leffakuva {
     width: 50%;
     height: 50%;
+}
+
+.mat-expansion-panel
+{
+    background: #708A97;
+    
+}
+
+.headers-align .mat-expansion-panel-header-title,
+.headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+  color: white;
+  text-align: left;
+ }
+
+a:link {
+    color: white;
+    font-weight: bold;
 }
 
 .calculator {

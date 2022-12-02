@@ -1,17 +1,28 @@
 <div>
     <h1>Finnkino uutisia</h1>
-        <mat-accordion class="example-headers-align" multi>
-            <mat-expansion-panel *ngFor="let item of cinemaData$ | async">
+    <!--Hakukenttä:-->
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Etsi uutista</mat-label>
+        <input matInput placeholder="Kirjoita hakusana" [(ngModel)]="searchText">
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+    </p>
+        <mat-accordion class="headers-align" multi>
+          <!--Luodaan jokaisesta cinemadatan ilmentymästä oma expansionpanel:-->
+            <mat-expansion-panel *ngFor="let item of cinemaData$ | async | appFilter: searchText" >
               <mat-expansion-panel-header>
                 <mat-panel-title>
-                  {{item.PublishDate | date:"dd/MM/yyyy"}}
+                  {{item.PublishDate | date:"dd.MM.yyyy"}}
                 </mat-panel-title>
                 <mat-panel-description>
+                  <!-- Uutisen otsikko: -->
                   {{item.Title}}
                 </mat-panel-description>
               </mat-expansion-panel-header>
               <img src="{{item.ImageURL}}" class="img centered leffakuva">
               <br>
+              <!-- API:n tarjoama lyhyt liidi uutisesta: -->
               {{item.HTMLLead}}
               <br>
               <a href={{item.ArticleURL}}>Lue lisää Finnkinon sivuilta!</a>

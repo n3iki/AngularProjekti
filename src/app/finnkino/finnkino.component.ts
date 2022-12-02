@@ -8,6 +8,7 @@ import { CinemaService } from '../cinema.service';
 })
 export class FinnkinoComponent implements OnInit {
   public cinemaData$: Observable<any>;
+  searchText : string = "";
 
   constructor(private _cinemaService: CinemaService)
   { 
