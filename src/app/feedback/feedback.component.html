@@ -1,7 +1,11 @@
-<p>feedback works!</p>
+<div>
+    <h1>Feedback</h1>
+    <p>onInputChange() funktio muuttaa yksittäisen kysymyksen vastausta ja tulostaa sen konsoliin, mutta mihinkään sitä ei lähetetä. </p>
+    <p>Tässä en mitenkään saa toimimaan matsliderThumbia, en vaikka mitä yrittäisin.</p>
+</div>
 <div *ngFor="let question of questions">
     <p>{{question.Kysymys}}</p>
-    <mat-slider min="1" max="5" step="1" value="3" (input)="onInputChange($event, question.Kysymys)"></mat-slider>
-   <!-- <mat-slider min="1" max="5" step="1" value="3" (input)="question.setAnswer($event)"></mat-slider> -->
+    <p>Vastaus: {{question.vastaus}}</p>
+    <mat-slider min="1" max="5" step="1" value="3" (input)="onInputChange($event, question.Kysymys)" (input)="question.vastaus = $event.value"></mat-slider>
 </div>
 

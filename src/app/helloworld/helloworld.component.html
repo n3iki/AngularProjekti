@@ -1,10 +1,12 @@
-<p>{{title}} works!</p>
-<h1>{{teksti}}</h1>
-<img alt="kuva" [src]="itemImageUrl" class="img centered smallimg">
-<br>
-<button mat-flat-button color="primary" (click)="onButtonClicked()">Vaihda kuva</button>
-<br>
-<br>
-Muuta otsikko:
-<br><input [(ngModel)]="teksti" />
-
+<div>
+    <h1>Hello world!</h1>
+    <p>Ensimmäinen Angular -harjoitus. Muutetaan kuvaa painiketta klikkaamalla ja otsikkoa laatikkoon kirjoittamalla.</p>
+    <h2>{{teksti}}</h2>
+    <img alt="kuva" [src]="itemImageUrl" class="img centered smallimg">
+    <br>
+    <button mat-flat-button color="primary" (click)="onButtonClicked()">Vaihda kuva</button>
+    <br>
+    <br>
+    Muuta otsikko:
+    <br><input [(ngModel)]="teksti" />
+</div>

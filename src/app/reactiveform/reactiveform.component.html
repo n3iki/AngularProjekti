@@ -1,10 +1,7 @@
-<p>reactiveform works!</p>
-<div class="notcentered">
-<p>To do:</p>
-    <ul>
-        <li>onsubmit() jälkeen pitäisi myös salasanan validoinnin tyhjentyä, tämä vaatii paremman validaattorin tekemistä.</li>
-      </ul>
-</div>
+<div>
+  <h1>Rekisteröintiharjoitus 2</h1>
+  <p>Tässä harjoituksessa toteutetaan reaktiivinen rekisteröintilomake. "Submit" -painike tulostaa syötetyt arvot konsoliin.</p>
+  <p>onsubmit() -funktion jälkeen pitäisi myös salasanan validoinnin tyhjentyä, tämä vaatisi paremman validaattorin tekemistä. Menköön nyt näin.</p>
 <div>
 
 <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">

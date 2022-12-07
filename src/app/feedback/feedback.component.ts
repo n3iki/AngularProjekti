@@ -9,11 +9,13 @@ import { QuestionService } from '../question.service';
 })
 export class FeedbackComponent implements OnInit {
   public questions:any[] = [];
+  public questionAnswer : any = "haloo";
+  public vastaus:any = "";
+
 
   onInputChange(e:any, question:any) :void
   {
     console.log(question + " Vastaus: " +e.value);
-
   }
 
   constructor(private _questionService: QuestionService) { }
