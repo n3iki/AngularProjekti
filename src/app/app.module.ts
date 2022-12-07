@@ -33,6 +33,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppFilterPipe } from './pipes/app-filter.pipe';
 import { AdminviewComponent } from './adminview/adminview.component';
 import { LoginComponent } from './login/login.component';
+import { initializeApp } from 'firebase/app';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { environment } from '../environments/environment';
+import { AuthService } from './auth.service';
+import { AuthGuard } from './shared/guard/auth.guard';
+import { LogoutviewComponent } from './logoutview/logoutview.component';
 
 
 const appRoutes: Routes = [
@@ -43,8 +53,9 @@ const appRoutes: Routes = [
   { path: 'homepage', component: HomepageComponent },
   { path: 'reactiveform', component: ReactiveformComponent},
   { path: 'finnkino', component: FinnkinoComponent},
-  { path: 'admin/main', component: AdminviewComponent},
+  { path: 'admin/main', component: AdminviewComponent, canActivate: [AuthGuard]},
   { path: 'admin/login', component: LoginComponent},
+  { path: 'logoutview', component: LogoutviewComponent},
   { path: '', redirectTo: '/homepage', pathMatch: 'full' }
 ];
 
@@ -62,6 +73,7 @@ const appRoutes: Routes = [
     AppFilterPipe,
     AdminviewComponent,
     LoginComponent,
+    LogoutviewComponent,
   ],
   imports: [
     BrowserModule,
@@ -84,9 +96,16 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     MatExpansionModule,
     HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
+  
 
   ],
-  providers: [QuestionService, CinemaService],
+  providers: [QuestionService, CinemaService, ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

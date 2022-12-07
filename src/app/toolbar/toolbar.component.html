@@ -41,9 +41,13 @@
             </a>       
       </mat-menu>
       <span class="toolbar-spacer"></span>
-      <a routerLink="/admin/login" routerLinkActive="active">
+      <a routerLink="/admin/login" routerLinkActive="active" *ngIf="!(authService.isLoggedIn) == true">
         <button mat-flat-button color="primary" >Kirjaudu sisään</button>
         </a>
+            <div *ngIf="(authService.isLoggedIn) == true">
+            <p class="käyttäjänimi">{{authService.userData.email}}</p>
+            <button mat-flat-button color="primary" (click)="authService.SignOut()">Kirjaudu ulos</button>
+            </div>
         
     </mat-toolbar>
     

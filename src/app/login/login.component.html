@@ -1,4 +1,5 @@
-<p>login works!</p>
+<p>Sisälle pääsee esim. seuraavilla tiedoilla:</p>
+<p>testi@testi.fi // testi123</p>
 <div>
     <form [formGroup]="loginForm" (ngSubmit)="logIn()">
         <mat-form-field>
@@ -18,7 +19,7 @@
             <mat-error *ngIf="password?.hasError('required')">Anna salasana</mat-error>
           </mat-form-field>
           <br>
-            <button mat-flat-button color="primary" [disabled]="loginForm.invalid">Kirjaudu sisään</button>
+            <button mat-flat-button color="primary"  (click)="AuthService.SignIn(email?.value, password?.value)">Kirjaudu sisään</button>
             <button mat-flat-button color="primary" (click)="peruuta()">Peruuta</button>
         </form>
         

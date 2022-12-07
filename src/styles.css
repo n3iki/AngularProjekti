@@ -8,6 +8,11 @@ html, body {
     margin: auto;
 }
 
+.käyttäjänimi {
+    display: inline;
+    font-weight: 100;
+    font-size: small;
+}
 
 .header {
     height: 10%;
@@ -43,7 +48,7 @@ img{
 
 .img.smallimg {
     width: 100px;
-    height: 100px;
+    height: 10px;
 }
 img.leffakuva {
     width: 50%;
@@ -67,6 +72,12 @@ a:link {
     color: white;
     font-weight: bold;
 }
+
+a:visited {
+    color: rgb(216, 216, 216);
+    font-weight: bold;
+}
+
 
 .calculator {
     width: 30%;
