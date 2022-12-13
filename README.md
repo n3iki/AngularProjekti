@@ -1,2 +1,4 @@
+# Tähän joku intro kurssista jne jne
+
 # 🖥 Projektin GitHub Pages:
-https://n3iki.github.io/AngularProjekti/index.html
+https://n3iki.github.io/AngularProjekti/

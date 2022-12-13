@@ -38,7 +38,12 @@
             <button mat-menu-item>
             <span>Finnkino API</span>
             </button>
-            </a>       
+            </a>
+        <a routerLink="/maatalousnayttely" routerLinkActive="active">
+            <button mat-menu-item>
+            <span>Maatalousnäyttely 2023</span>
+            </button>
+            </a>              
       </mat-menu>
       <span class="toolbar-spacer"></span>
       <a routerLink="/admin/login" routerLinkActive="active" *ngIf="!(authService.isLoggedIn) == true">

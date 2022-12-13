@@ -1,0 +1,53 @@
+<div>
+    <h1>Maatalousnäyttelyn 2023 liput nyt myynnissä!</h1>
+</div>
+<div>
+    <h3>Valitse lipun tyyppi ja määrä</h3>
+    <form [formGroup]="ticketForm">
+    <div *ngFor="let lippu of lippus">
+        {{lippu.Lippu}} {{lippu.Hinta}}€
+        <br>
+        <button mat-mini-fab matTooltip="Primary" color="primary" (click)="addTicket(lippu.ID); $event.preventDefault()" >+</button>&nbsp;&nbsp;{{lippu.Maara}}&nbsp;&nbsp;<button mat-mini-fab matTooltip="Primary" color="primary" (click)="removeTicket(lippu.ID); $event.preventDefault()">-</button>
+    </div>
+    <br>
+    <p>Olen MTK:n jäsen:</p>
+    <mat-radio-group aria-label="mtkjäsen" (change)="ticketDiscount($event)">
+        <mat-radio-button value="1">Kyllä</mat-radio-button>
+        <mat-radio-button value="2">En</mat-radio-button>
+      </mat-radio-group>
+    <br><br>
+    <h2>Yhteensä: {{lippujenHinta}} €</h2>
+    <mat-divider></mat-divider>
+    <h3>Täytä tilaajan tiedot</h3>
+    <mat-form-field>
+        <input matInput
+        placeholder="First name"
+        formControlName="firstName"
+        >
+        <mat-error *ngIf="firstName?.hasError('required')">Anna etunimesi</mat-error>
+        <mat-error *ngIf="firstName?.hasError('minlength')">Etunimessä täytyy olla vähintään kaksi merkkiä</mat-error>
+        <mat-error *ngIf="firstName?.hasError('pattern')">Nimessä voi olla ainoastaan kirjaimia</mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput
+        placeholder="Last name"
+        formControlName="lastName"
+        >
+        <mat-error *ngIf="lastName?.hasError('required')">Anna sukunimesi</mat-error>
+        <mat-error *ngIf="lastName?.hasError('minlength')">Sukunimessä täytyy olla vähintään kaksi merkkiä</mat-error>
+        <mat-error *ngIf="lastName?.hasError('pattern')">Nimessä voi olla ainoastaan kirjaimia</mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+      <input matInput
+      placeholder="Email"
+      formControlName="email"
+      >
+      <mat-error *ngIf="email?.hasError('required')">Anna sähköpostiosoitteesi</mat-error>
+      <mat-error *ngIf="email?.hasError('pattern')">Sähköpostiosoite ei kelpaa</mat-error>
+      </mat-form-field>
+      <br>
+      <button mat-flat-button color="primary" [disabled]="ticketForm.invalid" (click)="onSubmit()">Osta liput</button>
+    </form>
+</div>

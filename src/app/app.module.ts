@@ -43,6 +43,9 @@ import { environment } from '../environments/environment';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './shared/guard/auth.guard';
 import { LogoutviewComponent } from './logoutview/logoutview.component';
+import { MaatalousnayttelyComponent } from './maatalousnayttely/maatalousnayttely.component';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatRadioModule} from '@angular/material/radio';
 
 
 const appRoutes: Routes = [
@@ -56,6 +59,7 @@ const appRoutes: Routes = [
   { path: 'admin/main', component: AdminviewComponent, canActivate: [AuthGuard]},
   { path: 'admin/login', component: LoginComponent},
   { path: 'logoutview', component: LogoutviewComponent},
+  { path: 'maatalousnayttely', component: MaatalousnayttelyComponent},
   { path: '', redirectTo: '/homepage', pathMatch: 'full' }
 ];
 
@@ -74,6 +78,7 @@ const appRoutes: Routes = [
     AdminviewComponent,
     LoginComponent,
     LogoutviewComponent,
+    MaatalousnayttelyComponent,
   ],
   imports: [
     BrowserModule,
@@ -101,6 +106,8 @@ const appRoutes: Routes = [
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+    MatDividerModule,
+    MatRadioModule
   
 
   ],
